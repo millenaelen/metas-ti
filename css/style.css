@@ -1,0 +1,475 @@
+:root{ /*para manter padrao de tudo, cria se uma variavel q ai consegue substituir tudo em um click*/
+
+    --brand: #1E90FF;
+    --brandDark: #87CEFA;
+    --brandLight: #f3fffd;
+    --title: #333333;
+    --text: #666666;
+
+    --rouded: 10px;
+}
+
+
+/*reboot ou reset algumas formatações que já vem como padrao. INICIO*/
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+    font-weight: 600px;
+}
+
+h2{
+    color: var(--title);
+    font-size: 40px;
+    line-height: 100%;
+}
+
+p{
+    color: var(--text);
+    line-height: 150%;
+}
+
+a{
+    text-decoration: none; /*todos os links resetados, tirando os sublinhados*/
+}
+
+img{
+    display: block; /*para tirar a bordinha de baixo da imagem*/ 
+}
+
+/*FIM*/
+
+.container {
+    max-width: 1140px; /*colocar largura max para o respansivo, qnd usar o site em outro formato de tela*/
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.header {
+    box-shadow: 2px 2px 5px 0px #EEE;
+    background-color: #fff;
+    /*posicionamento fixo somente após a rolagem*/
+    position: sticky;
+    top: 0;
+    z-index: 5; /*só pode ser trabalhado com position, pois ele que define em qual camada acima vc está, é a qualtidade de camada que o header ficará em cima das outras*/
+}
+
+.header .container {
+    /*formatando o container q esta dentro do header*/
+    display: flex;
+    justify-content: space-between;
+    /*trabalha o alinhamento horizontal*/
+    align-items: center;
+    height: 100px;
+}
+
+.menu a{
+
+    color: var(--title);
+    font-size: 14px;
+    margin-left: 10px;
+    transition: 0.5s;
+}
+
+.menu a:hover{
+    color: var(--brand);
+}
+
+.btn{
+    background-color: var(--brand);
+    color: #fff !important;
+    padding: 12px 30px; /*vertical(top/bottom) e horizontal(left/right)*/
+    border-radius: 10px;
+    transition: 0.5s;
+
+    display: inline-block;
+}
+
+.btn:hover{
+    background-color: var(--brandDark);
+}
+
+.hero-section .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.content-hero{
+    max-width:558px; 
+}
+
+.content-hero h1{
+    color: var(--title);
+    font-size: 60px;
+    line-height: 100%;
+}
+
+.content-hero p{
+    font-size: 20px;
+}
+
+.text-brand{
+    color: var(--brand);
+}
+
+.responsavel{
+    font-size: 16px !important;
+}
+
+.especialista{
+    color: var(--brand);
+    border: solid 1px var(--brand);
+    padding: 8px 28px ; /*primeiro valor sempre vertical e o segundo horizontal*/
+    display: inline-block; 
+    border-radius: 30px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.apresentacao{
+    display: flex;
+    align-items: center;
+    column-gap: 24px;
+    margin-bottom: 100px;
+}
+
+.image-apresentacao img{
+    border-radius: var(--rouded);
+    width: 700px;
+    height: 460px;
+}
+
+.observacao{
+    font-size: 10px;
+}
+
+.servicos{
+    text-align: center; 
+}
+
+.servicos p{
+    max-width: 725px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.flex-card{
+    display: flex;
+    flex-wrap: wrap; /*permite multiplas linhas dentro do flex container*/
+    gap: 24px;   
+    justify-content: center;
+}
+
+.card{
+    width: 364px;
+    height: 200px;
+    box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.25);
+    border-radius: var(--rouded); 
+    
+    display: flex; /*usar smp no elemento pai de onde vc quer mudar, qnd quiser trabalhar com flex == ele ajuda caso o texto tenha alteração e ajusta com o tamanho*/
+    flex-direction: column;
+    justify-content: center;
+
+    padding-left: 24px;
+    padding-right: 24px;
+
+    /* faz com que as dimensões(largura e altura) sejam respeitadas (deixa fixo a estrutura e adapta o conteudo dentro) apesar do padding e da borda */
+    box-sizing: border-box;
+
+    transition: 0.7s;
+
+}
+
+.card p{
+    width: 100%;
+    font-size: 14px;
+}
+
+.card h3{
+    color: var(--brand);
+    font-size: 24px;
+}
+
+.card:hover{
+    background: linear-gradient(90deg, var(--brand) 0%, var(--brandDark) 100%);
+    transform: translateY(-5px);
+}
+
+/*formatando o h3 e o p somente qnd o mouse esta em cima do card*/
+.card:hover h3, .card:hover p{
+    color: #fff; 
+}
+
+.agendamento{
+    /*background-color: var(--brand);  >>sem img de fundo*/
+    background-color: var(--brand);
+    background-size: cover; /*para a img n repetir(como padrao) caso expande a tela*/
+    background-position: top center;
+    margin: 100px 0;
+}
+
+.agendamento h2, .agendamento p{
+    color: #fff;
+}
+
+.agendamento .btn{
+    border: solid 2px #fff;
+}
+
+.content-agendamento{
+    width: calc(100% - 280px); /*calcular o tamanho 100% menos o tamanho da img*/
+    max-width: 850px;
+}
+
+.agendamento .container{
+    /*position para servir de referência para o absolute*/
+    position: relative;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    /*padding: 50px 12px;*/
+}
+
+.image-agendamento{
+    position: absolute;
+    right: 12px;
+    bottom: 0;
+    width: 300px;
+    height: 350px;
+
+}
+
+.depoimentos{
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.depoimentos p{
+    font-size: 20px;
+    padding-left: 80px;
+    padding-right: 80px;
+}
+
+.depoimentos strong{
+    color: var(--brand);
+    font-size: 25px;
+}
+
+.contato{
+    display: flex;
+    align-items: center;
+    column-gap: 24px;
+}
+
+.contato h3{
+    font-size: 24px;
+    color: var(--brand);
+    margin-top: 24px;
+}
+
+.contato ul{
+    color: var(--text);
+    font-size: 14px;
+    padding:0;
+    list-style-position: inside; /*para ajustar a bolinha junto com o titulo de cima, a partir dele e nao do texto*/
+}
+
+.footer{
+    background: linear-gradient(90deg, var(--brand) 0%, var(--brandDark) 100%);
+    margin-top: 100px;
+    padding: 22px 0;
+}
+
+.footer .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.image-footer{
+    display: flex;
+    column-gap: 10px; /*usa o gap só no flex, ele é o espaço entre os elemnentos da coluna e/ou linha*/
+    padding: 22px 0;
+}
+
+.content-footer p{
+    color: #fff;
+    margin: 0;
+}
+
+.btn-wpp{
+    position: fixed;
+    right: 10px;
+    bottom: 145px;
+}
+
+.btn-wpp:hover{
+    transform: scale(1.2);
+    /**ou entao:  scale: 1.2;**/
+}
+
+.swiper-button-next,
+.swiper-button-prev{
+    color: var(--brand);
+}
+
+
+/*media queries*/
+
+@media (max-width:1040px){
+
+    h2{
+        font-size: 28px;
+    }
+
+    h3{
+        font-size: 20px !important;
+    }
+
+    .menu{
+       /*display: none;*/
+       position: absolute;
+       left: 0;
+       top: 100px;
+       background-color: var(--brandDark);
+       width: 100%;
+       transform: translateX(-50%);
+       transition: 0.3s ease-in-out;
+       opacity: 0; /*menu transparente*/
+       pointer-events: none; /*remove as ações do mouse no menu q esta transparente*/
+    }
+
+    .menu-open{
+        /*display: block !important;*/
+        transform: translateX(0);
+        opacity: 1; /*menu visivel/opaco*/
+        pointer-events: all; /*add as ações do mouse*/
+    }
+
+    .menu a{
+        display: block;
+        color: #fff;
+        margin: 0;
+        padding: 20px 12px;
+        border-bottom: 1px solid var(--brand);
+        text-align: center;
+    }
+
+    .btn{
+        border-radius: 0;
+        text-align: center;
+    }
+
+    .bar{
+        width: 40px;
+        height: 3px;
+        background-color: var(--brand);
+        margin-bottom: 3px;
+        transition: 0.3s;
+    }
+
+    /*primeiro filho*/
+    .x .bar:first-child{
+        transform: rotate(45deg) translate(5px,5px);
+    }
+
+    /*segundo filho*/
+    .x .bar:nth-child(2){
+        opacity: 0;
+    }
+
+    /*ultimo filho*/
+    .x .bar:last-child{
+        transform: rotate(-45deg) translate(4px,-3px);
+    }
+
+    .hero-section .container{
+        flex-direction: column-reverse;
+        row-gap: 36px; /*espaçamento entre linhas*/
+        margin-top: 24px;
+        margin-bottom: 60px;
+    }
+
+    .content-hero h1{
+        font-size: 36px;
+    }
+
+    .content-hero p{
+        font-size: 16px;
+    }
+
+    .apresentacao{
+        flex-direction: column;
+        row-gap: 36px;
+        margin-bottom: 60px;
+    }
+
+    .content-apresentacao{
+        max-width: 558px;
+    }
+
+    .agendamento{
+        margin: 60px 0;
+    }
+
+    .depoimentos{
+        margin-bottom: 60px;
+    }
+
+    .depoimentos p{
+        font-size: 16px;
+    }
+
+    .contato{
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 767px){
+
+    img{ /*define a largura maxima como 100% da propria img*/
+        max-width: 100%;
+    }
+    
+    .mapa, iframe{
+        width: 100%;
+    }
+
+    .content-agendamento{
+        width: 100%;
+    }
+    
+    .image-agendamento{
+        display: none;
+    }
+
+    .depoimentos p{
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    .footer .container{
+        flex-direction: column;
+        text-align: center;
+        row-gap: 20px;
+    }
+
+    .footer{
+        margin-top: 60px;
+    }
+}
+
+
+
+
+
+
+
+  
